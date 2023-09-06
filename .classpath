@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/BinaryTree.jar"/>
+	<classpathentry kind="lib" path="dist/lib/flatlaf-demo-3.1.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/Gradianto-5.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/material-theme-lite-21.0.0.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
