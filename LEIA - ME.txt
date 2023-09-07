@@ -1,0 +1,66 @@
+INSTITUTO FEDERAL GOIANO - CAMPUS URUTAÍ
+07 de Setembro de 2023
+Disciplina: Estrutuda de Dados 2
+Docente: Junio Cesar de Lima
+Discentes: Kaio Resende Silva & Farley Ramos de Sena
+
+Implementação sobre Árvore Binária de Busca AVL
+
+O sistema fui desenvolvido utilizando a versão 20 do JDK.
+
+Para executar o programa utilizando alguma IDE, é necessário importar o arquivo Tema.jar,
+recomendamos o uso do NetBeans ou Eclipse por facilitarem o procedimento.
+
+Para executar o programa de forma convencional, basta acessar a pasta dist e executar
+o arquivo T2ED2.
+
+Como funciona:
+
+Ao abrir o programa você deverá selecionar um arquivo txt com os dados dos alunos, o
+arquivo deve seguir a seguinte formatação de texto:
+
+MATRICULA|NOME|NOTA1|NOTA2|NOTA3
+
+Ex:
+27|João da Silva|8.5|7.9|9.2
+
+Ao selecionar o arquivo, o programa irá lhe direcionar para a interface principal
+onde será exibido a árvore dos dados e algumas outras opções.
+
+Campo "Número de matrícula": 
+Nesse campo deve ser inserido o número de matrícula que você deseja buscar ou remover.
+
+Botão "Buscar Aluno":
+Esse botão faz uma busca na árvore usando o número de matrícula inserido no campo "Número de matrícula".
+
+Botão "Inserir Aluno":
+Esse botão abre um formulário para inserir os dados do novo aluno.
+
+Botão "Remover Aluno":
+Esse botão faz a remoção na árvore usando o número de matrícula inserido no campo "Número de matrícula".
+
+Campo "Aluno buscado":
+Nesse campo é mostrado os dados do aluno buscado ou retorna uma mensagem de erro caso não seja encontrado.
+
+Botão "Árvore":
+Esse botão muda a visualização inferior para a árvore binaria avl.
+
+Botão "Imprimir":
+Esse botão muda a visualização inferior para uma lista ordenada pela matrícula dos alunos.
+
+Formulário para inserir aluno:
+
+Campo "Matrícula":
+Nesse campo deve ser inserido o número da matricula do aluno, é feito uma validação para não existir 2 alunos
+com a mesma matrícula.
+
+Campo "Nome":
+Nesse campo deve ser inserido o nome do aluno.
+
+Campos "Nota 1, Nota 2, Nota 3":
+Nesses campos devem ser inseridas as notas do aluno.
+
+Botão "Salvar":
+Esse botão irá salvar o aluno e atualizar a exibição da árvore.
+
+Ao encerrar o programa, um arquivo chamado "saida.txt" com os dados atualizados dos alunos será salvo na pasta do programa.

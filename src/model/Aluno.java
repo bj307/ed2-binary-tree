@@ -4,18 +4,21 @@
  */
 package model;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
 /**
  *
  * @author kaior
  */
 public class Aluno {
-    
+
     int matricula;
     String nome;
     Double nota1, nota2, nota3, media;
-    
-    public Aluno(){
-        
+
+    public Aluno() {
+
     }
 
     public Aluno(int matricula, String nome, Double nota1, Double nota2, Double nota3, Double media) {
@@ -72,13 +75,16 @@ public class Aluno {
     }
 
     public void setMedia(Double nota1, Double nota2, Double nota3) {
-        this.media = nota1*0.2 + nota2*0.35 + nota3*0.45;
+        double media = nota1 * 0.2 + nota2 * 0.35 + nota3 * 0.45;
+        DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+        dfs.setDecimalSeparator('.');
+        DecimalFormat df = new DecimalFormat("###.##", dfs);
+        this.media = Double.parseDouble(df.format(media));
     }
 
     @Override
     public String toString() {
         return "Aluno{" + "matricula=" + matricula + ", nome=" + nome + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3=" + nota3 + ", media=" + media + '}';
     }
-    
-    
+
 }

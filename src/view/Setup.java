@@ -4,7 +4,6 @@
  */
 package view;
 import com.formdev.flatlaf.IntelliJTheme;
-import controller.AlunosController;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,6 +11,7 @@ import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import model.Aluno;
+import model.ArvoreAvl;
 
 /**
  *
@@ -28,7 +28,7 @@ public class Setup extends javax.swing.JFrame {
         this.setTitle("Binary Tree - by Farley and Kaio");
     }
 
-    AlunosController ac = new AlunosController();
+    ArvoreAvl av = new ArvoreAvl();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,11 +67,9 @@ public class Setup extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(selectBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -104,7 +102,7 @@ public class Setup extends javax.swing.JFrame {
         try {
             File file = fileChooser.getSelectedFile();
             FileInputStream arquivoTxt = new FileInputStream(file);
-            ArrayList<Aluno> alunos = ac.lerTxt(arquivoTxt);
+            ArrayList<Aluno> alunos = av.lerTxt(arquivoTxt);
             Home home = new Home(alunos);
             home.setVisible(true);
             this.dispose();
