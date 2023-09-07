@@ -16,16 +16,16 @@ o arquivo T2ED2.
 
 Como funciona:
 
-Ao abrir o programa você deverá selecionar um arquivo txt com os dados dos alunos, o
-arquivo deve seguir a seguinte formatação de texto:
+Para usar o programa é necessário que você tenha um arquivo chamado "entrada.txt" na raiz do projeto
+com os dados dos alunos, arquivo deve seguir a seguinte formatação de texto:
 
 MATRICULA|NOME|NOTA1|NOTA2|NOTA3
 
 Ex:
 27|João da Silva|8.5|7.9|9.2
 
-Ao selecionar o arquivo, o programa irá lhe direcionar para a interface principal
-onde será exibido a árvore dos dados e algumas outras opções.
+Ao abrir o programa ele irá ler o arquivo de forma automática, na interface principal
+será exibido a árvore dos dados e algumas outras opções.
 
 Campo "Número de matrícula": 
 Nesse campo deve ser inserido o número de matrícula que você deseja buscar ou remover.

@@ -16,6 +16,9 @@ import model.Aluno;
 import model.ArvoreAvl;
 import model.Node;
 import java.awt.event.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,19 +31,14 @@ public class Home extends javax.swing.JFrame {
     ArvoreAvl avl = new ArvoreAvl();
     InserirAluno ia = new InserirAluno(this);
 
-    public Home() {
-
-    }
-
     /**
      * Creates new form Home
      */
-    public Home(ArrayList al) {
+    public Home() {
         initComponents();
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setTitle("Binary Tree - by Farley and Kaio");
-        this.alunos = al;
 
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -67,8 +65,49 @@ public class Home extends javax.swing.JFrame {
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
         doc.setParagraphAttributes(0, doc.getLength(), center, false);
 
+        this.alunos = lerTxt();
         popularArvore(this.alunos);
         mostrarArvore();
+    }
+
+    private ArrayList<Aluno> lerTxt() {
+        FileInputStream arquivoTxt = null;
+        try {
+            // Abra o arquivo chamado "entrada.txt" localizado na raiz do projeto
+            arquivoTxt = new FileInputStream("entrada.txt");
+            Scanner lerArquivo = new Scanner(arquivoTxt, "UTF-8");
+            ArrayList<Aluno> alunos = new ArrayList<>();
+            while (lerArquivo.hasNext()) {
+                String linha = lerArquivo.nextLine();
+                if (linha != null && !linha.isEmpty()) {
+                    String dados[] = linha.split("\\|");
+                    Aluno aluno = new Aluno();
+                    aluno.setMatricula(Integer.parseInt(dados[0]));
+                    aluno.setNome(dados[1]);
+                    double nota1 = Double.parseDouble(dados[2].replace(",", "."));
+                    double nota2 = Double.parseDouble(dados[3].replace(",", "."));
+                    double nota3 = Double.parseDouble(dados[4].replace(",", "."));
+
+                    aluno.setNota1(nota1);
+                    aluno.setNota2(nota2);
+                    aluno.setNota3(nota3);
+                    aluno.setMedia(nota1, nota2, nota3);
+                    alunos.add(aluno);
+                }
+            }
+            return alunos;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        } finally {
+            try {
+                if (arquivoTxt != null) {
+                    arquivoTxt.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void popularArvore(ArrayList<Aluno> array) {
@@ -90,11 +129,11 @@ public class Home extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-    
+
     public void mostrarArvore() {
         avl.exibirArvore(arvore);
     }
-    
+
     public void imprimir() {
         ArrayList<Aluno> alunos = avl.emOrdem();
         StringBuilder resultado = new StringBuilder();
@@ -228,8 +267,7 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnImprimir)
                         .addComponent(btnArvore)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

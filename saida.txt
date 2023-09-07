@@ -1,0 +1,20 @@
+5|Rafaela Sousa|7.7|8.0|7.6|7.76
+8|Lucas Santos|7.6|7.9|7.2|7.53
+9|Julia Lima|8.3|8.7|8.5|8.53
+10|Luiza Ferreira|7.4|8.2|7.9|7.9
+11|Camila Fernandes|7.9|7.8|8.0|7.91
+12|Laura Lima|9.1|9.0|9.2|9.11
+14|Bianca Santos|7.6|7.5|7.9|7.7
+15|Maria Santos|7.8|8.1|8.7|8.31
+18|Ana Souza|6.7|7.3|7.1|7.09
+20|Diego Pereira|7.3|7.1|7.5|7.32
+23|Marcos Costa|8.7|9.0|8.8|8.85
+27|João da Silva|8.5|7.9|9.2|8.61
+29|Larissa Silva|8.8|9.1|8.7|8.86
+30|Fernando Rodrigues|8.4|8.6|8.5|8.52
+33|Carlos Rodrigues|8.0|7.5|8.3|7.96
+38|Gustavo Oliveira|8.2|8.3|8.1|8.19
+42|Pedro Oliveira|9.2|9.5|9.8|9.57
+47|Daniel Costa|9.2|9.3|9.4|9.32
+51|Isabela Almeida|9.0|8.6|9.3|9.0
+62|Mateus Pereira|9.5|9.4|9.6|9.51

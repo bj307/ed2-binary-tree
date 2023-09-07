@@ -30,30 +30,6 @@ public class ArvoreAvl {
         return raiz == null;
     }
 
-    public ArrayList<Aluno> lerTxt(FileInputStream arquivoTxt) {
-        Scanner lerArquivo = new Scanner(arquivoTxt, "UTF-8");
-        ArrayList<Aluno> alunos = new ArrayList<>();
-        while (lerArquivo.hasNext()) {
-            String linha = lerArquivo.nextLine();
-            if (linha != null && !linha.isEmpty()) {
-                String dados[] = linha.split("\\|");
-                Aluno aluno = new Aluno();
-                aluno.setMatricula(Integer.parseInt(dados[0]));
-                aluno.setNome(dados[1]);
-                double nota1 = Double.parseDouble(dados[2].replace(",", "."));
-                double nota2 = Double.parseDouble(dados[3].replace(",", "."));
-                double nota3 = Double.parseDouble(dados[4].replace(",", "."));
-
-                aluno.setNota1(nota1);
-                aluno.setNota2(nota2);
-                aluno.setNota3(nota3);
-                aluno.setMedia(nota1, nota2, nota3);
-                alunos.add(aluno);
-            }
-        }
-        return alunos;
-    }
-
     public void inserir(Aluno novo) {
         Node aluno = new Node(novo);
         raiz = inserirRec(raiz, aluno);
